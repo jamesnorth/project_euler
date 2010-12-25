@@ -1,0 +1,148 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      3972,        139]
+NotebookOptionsPosition[      3082,        103]
+NotebookOutlinePosition[      3453,        119]
+CellTagsIndexPosition[      3410,        116]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Problem 4", "Title",
+ CellChangeTimes->{{3.48404488167896*^9, 3.48404489720496*^9}},
+ TextAlignment->Center],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.48404491399496*^9, 3.4840449491739597`*^9}],
+
+Cell["\<\
+A palindromic number reads the same both ways.The largest palindrome made \
+from the product of two 2 - digit numbers is 9009 = 91 99.
+
+Find the largest palindrome made from the product of two 3 - digit numbers.\
+\>", "Text"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.4840449373679595`*^9, 3.48404493861296*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToString", "[", "1234", "]"}]], "Input",
+ CellChangeTimes->{{3.4840450530159597`*^9, 3.4840450572199593`*^9}}],
+
+Cell[BoxData[
+ FormBox["\<\"1234\"\>", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840450577799597`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"str", " ", "=", " ", 
+  RowBox[{"ToString", "[", "1234", "]"}]}]], "Input",
+ CellChangeTimes->{{3.48404506081096*^9, 3.4840450672139597`*^9}}],
+
+Cell[BoxData[
+ FormBox["\<\"1234\"\>", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840450684129596`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"str", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4840450696049595`*^9, 3.4840450720529594`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"Part", "::", "\<\"partd\"\>"}], 
+   RowBox[{
+   ":", " "}], "\<\"\\!\\(\\*StyleBox[\\\"\\\\\\\"Part specification \\\\\\\"\
+\\\", \\\"MT\\\"]\\)\[NoBreak]\\!\\(\\*StyleBox[\\!\\(TraditionalForm\\`\\(\\\
+\"1234\\\" \[LeftDoubleBracket] 1 \[RightDoubleBracket]\\)\\), \\\"MT\\\"]\\)\
+\[NoBreak]\\!\\(\\*StyleBox[\\\"\\\\\\\" is longer than depth of \
+object.\\\\\\\"\\\", \\\"MT\\\"]\\) \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\
+\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/partd\\\", ButtonNote -> \
+\\\"Part::partd\\\"]\\)\"\>"}], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.4840450728989596`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"\<\"1234\"\>", "\[LeftDoubleBracket]", "1", 
+   "\[RightDoubleBracket]"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840450728989596`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringQ", "[", "str", "]"}]], "Input",
+ CellChangeTimes->{{3.48404508904196*^9, 3.4840451003919597`*^9}}],
+
+Cell[BoxData[
+ FormBox["True", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840451008569593`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{607, 549},
+WindowMargins->{{40, Automatic}, {Automatic, 51}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (January 30, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 114, 2, 83, "Title"],
+Cell[684, 26, 91, 1, 31, "Input"],
+Cell[778, 29, 235, 5, 83, "Text"],
+Cell[1016, 36, 93, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1134, 41, 134, 2, 31, "Input"],
+Cell[1271, 45, 111, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1419, 52, 166, 3, 31, "Input"],
+Cell[1588, 57, 111, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1736, 64, 149, 3, 31, "Input"],
+Cell[1888, 69, 709, 13, 21, "Message"],
+Cell[2600, 84, 182, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2819, 93, 129, 2, 31, "Input"],
+Cell[2951, 97, 103, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

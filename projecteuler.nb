@@ -1,0 +1,555 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     16232,        546]
+NotebookOptionsPosition[     14038,        464]
+NotebookOutlinePosition[     14438,        481]
+CellTagsIndexPosition[     14395,        478]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Solutions", "Title",
+ CellFrame->True,
+ CellChangeTimes->{{3.48110879298*^9, 3.481108800373*^9}},
+ TextAlignment->Center,
+ FontFamily->"CENA",
+ FontSize->48,
+ FontSlant->"Italic",
+ FontColor->RGBColor[0, 0, 1],
+ Background->RGBColor[0.87, 0.94, 1]],
+
+Cell["\<\
+This notebook contains my solutions to Project Euler problems. Most of the \
+solutions have been solved in other languages such as Python, Ruby and Tcl. \
+These other solutions should be in the same directory as this notebook. Some \
+of the code in this notebook do not give one answer, rather the output needs \
+interpreting.
+  \
+\>", "Text",
+ CellChangeTimes->{
+  3.481108813398*^9, {3.481108999663*^9, 3.481109054446*^9}, {
+   3.4846381586273813`*^9, 3.484638309081381*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Problem 1    ",
+ StyleBox["(SOLVED)",
+  FontFamily->"Arial",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]]
+}], "Section",
+ CellChangeTimes->{{3.481108820954*^9, 3.481108823365*^9}, 
+   3.4811941669237328`*^9},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["\<\
+Add all the natural numbers below one thousand that are multiples of 3 or 5.\
+\>", "Text",
+ CellChangeTimes->{{3.4811937082327323`*^9, 3.481193728023732*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", " ", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"Or", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Mod", "[", 
+         RowBox[{"x", ",", "3"}], "]"}], "\[Equal]", "0"}], ")"}], ",", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Mod", "[", 
+         RowBox[{"x", ",", "5"}], "]"}], " ", "\[Equal]", " ", "0"}], ")"}]}],
+      "]"}], ",", " ", "x", ",", " ", "0"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.481108458289*^9, 3.481108531803*^9}, {3.481108625807*^9,
+   3.481108640617*^9}, {3.48110876405*^9, 3.481108765223*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "i", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", "0", ",", " ", "1000"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4811085350030003`*^9, 3.481108567743*^9}}],
+
+Cell[BoxData[
+ FormBox["234168", TraditionalForm]], "Output",
+ CellChangeTimes->{3.481108588192*^9, 3.481108643774*^9, 3.481108767638*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Solve Problem One\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ans", " ", "=", " ", 
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"Or", "[", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"i", ",", "3"}], "]"}], "\[Equal]", "0"}], ")"}], ",", 
+           " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{"i", ",", "5"}], "]"}], " ", "\[Equal]", " ", "0"}], 
+            ")"}]}], "]"}], ",", " ", "i", ",", " ", "0"}], "]"}], ",", " ", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", "0", ",", " ", "1000"}], "}"}]}], "]"}]}], ";",
+     "\[IndentingNewLine]", 
+    RowBox[{"Speak", "[", "\"\<The solution to problem one is\>\"", "]"}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"Speak", "[", "ans", "]"}]}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.4846372599763813`*^9, 3.484637358215381*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  ButtonBox["\<\"Solve Problem One\"\>",
+   Appearance->Automatic,
+   ButtonFunction:>($CellContext`ans = Sum[
+       If[
+        Or[
+        Mod[$CellContext`i, 3] == 0, Mod[$CellContext`i, 5] == 
+         0], $CellContext`i, 0], {$CellContext`i, 0, 1000}]; 
+    Speak["The solution to problem one is"]; Speak[$CellContext`ans]),
+   Evaluator->Automatic,
+   Method->"Preemptive"], TraditionalForm]], "Output",
+ CellChangeTimes->{3.484637329372381*^9, 3.484637363057381*^9}]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Problem 3    ",
+ StyleBox["(SOLVED)",
+  FontFamily->"Arial",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]]
+}], "Section",
+ CellChangeTimes->{{3.4811088432679996`*^9, 3.481108864032*^9}, 
+   3.4811941593527327`*^9},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["Find the largest prime factor of 600851475143", "Text",
+ CellChangeTimes->{{3.4811088723859997`*^9, 3.48110890221*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FactorInteger", "[", "600851475143", "]"}]], "Input"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"71", "1"},
+     {"839", "1"},
+     {"1471", "1"},
+     {"6857", "1"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.481108918796*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 4", "Section",
+ CellChangeTimes->{{3.481194181082732*^9, 3.4811941835027323`*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["\<\
+A palindromic number reads the same both ways.The largest palindrome made \
+from the product of two 2 - digit numbers is 9009 = 91 99.
+
+Find the largest palindrome made from the product of two 3 - digit numbers.\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Problem 7    ",
+ StyleBox["(SOLVED)",
+  FontFamily->"Arial",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]]
+}], "Section",
+ CellChangeTimes->{{3.481108939337*^9, 3.481108942157*^9}, 
+   3.4811941327797327`*^9},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["Find the 10001 st prime number", "Text",
+ CellChangeTimes->{{3.481108954171*^9, 3.4811089699119997`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Prime", "[", "10001", "]"}]], "Input",
+ CellChangeTimes->{{3.481108977494*^9, 3.481108981576*^9}}],
+
+Cell[BoxData[
+ FormBox["104743", TraditionalForm]], "Output",
+ CellChangeTimes->{3.481108981968*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 9", "Section",
+ CellChangeTimes->{{3.4811939300947323`*^9, 3.4811939319417324`*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell[TextData[{
+ "A Pythagorean triplet is a set of three natural numbers, a b c, for which, \
+\n\t\n\t",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["a", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["b", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["c", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\n\nFor example, ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["3", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["4", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = 9 + 16 = 25 = ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["5", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ".\n\nThere exists exactly one Pythagorean triplet for which a + b + c = \
+1000.\nFind the product abc."
+}], "Text",
+ CellChangeTimes->{{3.4811939627177324`*^9, 3.481194010195732*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Problem 10    ",
+ StyleBox["(SOLVED)",
+  FontFamily->"Arial",
+  FontColor->RGBColor[0., 0.5019607843137255, 0.]]
+}], "Section",
+ CellChangeTimes->{{3.4811933915437326`*^9, 3.4811933941097326`*^9}, {
+  3.4811941028517323`*^9, 3.4811941061727324`*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["Find the sum of all the prime numbers below 2000000.", "Text",
+ CellChangeTimes->{{3.4811934057537327`*^9, 3.4811934266977324`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Pretty", " ", "simple", " ", 
+    RowBox[{"code", ".", " ", "A"}], " ", "little", " ", "bit", " ", "slow", 
+    " ", "however"}], " ", "*)"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"total", "=", "0"}], ";", 
+    RowBox[{"i", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"While", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Prime", "[", "i", "]"}], " ", "<", " ", "2000000"}], ",", " ", 
+     RowBox[{
+      RowBox[{"total", " ", "=", " ", 
+       RowBox[{"total", "+", 
+        RowBox[{"Prime", "[", "i", "]"}]}]}], ";", " ", 
+      RowBox[{"i", "++"}], ";"}]}], "]"}], "\[IndentingNewLine]", 
+   "total"}]}]], "Input",
+ CellChangeTimes->{{3.4811934394887323`*^9, 3.481193475608732*^9}, {
+  3.4811935320107327`*^9, 3.4811935455537324`*^9}}],
+
+Cell[BoxData[
+ FormBox["142913828922", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4811934871907325`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 12", "Section",
+ CellChangeTimes->{{3.4811953247207327`*^9, 3.4811953265867324`*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88]],
+
+Cell["\<\
+The sequence of triangle numbers is generated by adding the natural \
+numbers.So the 7 th triangle number would be 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. \
+The first ten terms would be : 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+Let us list the factors of the first seven triangle numbers : 1 : 1
+3 : 1, 3
+6 : 1, 2, 3, 6
+10 : 1, 2, 5, 10
+15 : 1, 3, 5, 15
+21 : 1, 3, 7, 21
+28 : 1, 2, 4, 7, 14, 28
+We can see that 28 is the first triangle number to have over five \
+divisors.What is the value of the first triangle number to have over five \
+hundred divisors?\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tri", "[", "n_", "]"}], ":=", 
+  FractionBox[
+   RowBox[{"n", 
+    RowBox[{"(", 
+     RowBox[{"n", "+", "1"}], ")"}]}], "2"]}]], "Input",
+ CellChangeTimes->{{3.4811977775997324`*^9, 3.481197797985732*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"tri", "[", "i", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", "1", ",", " ", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.481197803228732*^9, 3.4811978058317327`*^9}, {
+  3.4811978386067324`*^9, 3.4811978543747325`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", "3", ",", "6", ",", "10", ",", "15", ",", "21", ",", "28", ",", 
+    "36", ",", "45", ",", "55"}], "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4811978065077324`*^9, 3.4811978549587326`*^9}]
+}, {2}]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"tri", "[", "i", "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", " ", "1", ",", " ", "100000"}], "}"}]}], "]"}], ";"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.4811983414947324`*^9, 3.4811983844107323`*^9}, {
+  3.4811984527497325`*^9, 3.481198474820732*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{"0.31199999999999967`", ",", "Null"}], "}"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.4811983730197325`*^9, 3.4811983855737324`*^9}, {
+  3.4811984536777325`*^9, 3.4811984757277327`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"1000", " ", "elems"}], " ", "=", " ", 
+  RowBox[{"2.41127", 
+   SuperscriptBox["x10", 
+    RowBox[{"-", "16"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"10000", " ", "elems"}], " ", "=", " ", 
+  "0.031"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"100000", " ", "elems"}], " ", "=", " ", "0.312"}]}], "Text",
+ CellChangeTimes->{{3.4811984091217327`*^9, 3.4811984477837324`*^9}, {
+  3.481198543702732*^9, 3.4811985515657325`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tmp", " ", "=", 
+   RowBox[{"FactorInteger", "[", "6", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"tmp", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "+", "1"}], ")"}], "*", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"tmp", "[", 
+      RowBox[{"[", "2", "]"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "+", "1"}], ")"}]}]}], "Input",
+ CellChangeTimes->{{3.4812127277939997`*^9, 3.4812128139560003`*^9}}],
+
+Cell[BoxData[
+ FormBox["12", TraditionalForm]], "Output",
+ CellChangeTimes->{{3.4812127312349997`*^9, 3.4812128143310003`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"i", "=", "1"}], ";", 
+  RowBox[{"factors", "=", 
+   RowBox[{"{", "n", "}"}]}], ";"}], "\n", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{"n", ">", "1"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mod", "[", 
+       RowBox[{"n", ",", 
+        RowBox[{"Prime", "[", "i", "]"}]}], "]"}], "\[Equal]", "0"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"fact", "=", 
+       RowBox[{"n", "/", 
+        RowBox[{"Prime", "[", "i", "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Append", "[", 
+       RowBox[{"factors", ",", "fact"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"n", "=", "fact"}], ";"}], ",", 
+     RowBox[{"i", "++"}]}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.4812127122200003`*^9, 3.481212718803*^9}, {
+  3.481215628683*^9, 3.481215704167*^9}, {3.4812161179300003`*^9, 
+  3.4812161494519997`*^9}, {3.481216179953*^9, 3.4812162546*^9}, {
+  3.481216285426*^9, 3.4812163029370003`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->"EditBar",
+WindowSize->{577, 598},
+WindowMargins->{{Automatic, 252}, {Automatic, 19}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (January 30, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 268, 8, 111, "Title"],
+Cell[838, 32, 487, 10, 101, "Text"],
+Cell[CellGroupData[{
+Cell[1350, 46, 273, 8, 75, "Section"],
+Cell[1626, 56, 168, 3, 29, "Text"],
+Cell[1797, 61, 633, 17, 31, "Input"],
+Cell[CellGroupData[{
+Cell[2455, 82, 250, 6, 31, "Input"],
+Cell[2708, 90, 138, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2883, 97, 1119, 29, 132, "Input"],
+Cell[4005, 128, 498, 12, 42, "Output"]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4549, 146, 278, 8, 75, "Section"],
+Cell[4830, 156, 125, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[4980, 161, 77, 1, 31, "Input"],
+Cell[5060, 164, 636, 19, 80, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5745, 189, 137, 2, 75, "Section"],
+Cell[5885, 193, 235, 5, 83, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6157, 203, 273, 8, 75, "Section"],
+Cell[6433, 213, 111, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[6569, 218, 122, 2, 31, "Input"],
+Cell[6694, 222, 100, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6843, 230, 139, 2, 75, "Section"],
+Cell[6985, 234, 1007, 35, 155, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8029, 274, 309, 8, 75, "Section"],
+Cell[8341, 284, 138, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[8504, 289, 815, 21, 92, "Input"],
+Cell[9322, 312, 111, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9482, 320, 140, 2, 75, "Section"],
+Cell[9625, 324, 573, 14, 227, "Text"],
+Cell[10201, 340, 240, 7, 47, "Input"],
+Cell[CellGroupData[{
+Cell[10466, 351, 308, 7, 31, "Input"],
+Cell[10777, 360, 267, 6, 30, "Output"]
+}, {2}]],
+Cell[CellGroupData[{
+Cell[11078, 371, 375, 10, 31, "Input"],
+Cell[11456, 383, 251, 6, 30, "Output"]
+}, Open  ]],
+Cell[11722, 392, 477, 12, 68, "Text"],
+Cell[CellGroupData[{
+Cell[12224, 408, 563, 17, 52, "Input"],
+Cell[12790, 427, 127, 2, 30, "Output"]
+}, Open  ]],
+Cell[12932, 432, 1078, 28, 152, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
